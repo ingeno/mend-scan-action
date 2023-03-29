@@ -51,6 +51,7 @@ runs:
         java-package: jre
 
     - name: Copy workspaces lock file to subfolders
+      shell: bash
       if: ${{inputs.yarn-workspaces == 'true'}}
       # The intention in the below command is to copy the yarn.lock from the root workspace to the other workspaces 
       # as a workaround since Mend does not support yarn workspaces as of the writing of this step.
