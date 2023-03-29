@@ -57,3 +57,5 @@ npm.projectNameFromDependencyFile=true
 ```
 
 For more details on the parameters available and their functions, please visit the Mend documentation for [Unified Agent Configuration Parameters](https://docs.mend.io/bundle/unified_agent/page/unified_agent_configuration_parameters.html).
+
+Note: In order to use the paramater `npm.projectNameFromDependencyFile=true` along with the `projectPerFolder=true`, you need to explicitly declare the version of each of the sub-projects in their corresponding `package.json` file.
