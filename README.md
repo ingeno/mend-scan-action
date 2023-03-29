@@ -1,4 +1,4 @@
-# mend-scanner-action
+# mend-scan-action
 
 To ensure compliance with licenses for open-source third-party libraries used in a project, this GitHub Action can be run as part of your workflow. It uses the [Mend Unified Agent](https://docs.mend.io/bundle/unified_agent/page/overview_of_the_unified_agent.html) to scan for license compliance, which allows for better control of which third-party libraries are included either directly or transitively.
 
@@ -19,11 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Node install
-        uses: ./.github/actions/node-setup
+      - name: Setup Node
+        uses: ingeno/aws-workflows/.github/actions/node-setup@main
 
       - name: Mend Scanner
-        uses: ingeno/mend-scanner-action@v1
+        uses: ingeno/mend-scan-action@v1
         with:
           api-key: ${{secrets.WS_APIKEY}}
           product-token: ${{secrets.WS_PRODUCTTOKEN}}
@@ -41,7 +41,7 @@ Before you can run the action you must have at least a product created on the Me
 
 ### Additional Configuration
 
-As defined in the `inputs` section in the [action.yml](./action.yml) file, there is an input (`config-file`) for a configuration file that can take in additional parameters to customize the scanner runs. You can define as many as these files as needed (e.g. a file per environment) and depending on which file you need for a specific run, you can pass that as an input when invoking the action. An example of this configuration can be found below:
+As defined in the `inputs` section in the [action.yml](./action.yml) file, there is an input (`config-file`) for a configuration file that can take in additional parameters to customize the scanner runs. You can define as many of these files as needed (e.g. a file per environment) and depending on which file you need for a specific run, you can pass that as an input when invoking the action. An example of this configuration can be found below:
 
 ```
 fileSystemScan=false
