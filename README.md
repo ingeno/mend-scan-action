@@ -4,7 +4,7 @@ To ensure compliance with licenses for open-source third-party libraries used in
 
 ## Using the GitHub Action
 
-The Mend Scanner Action can be run as a step in your worflows, for example the `Pull Request Merged` workflow. It requires a few inputs to be set which you can find the list of those defined inputs and their descriptions [here](./action.yml) in the `inputs` section. Below is an axample of including this action inside of an existing workflow:
+The Mend Scan Action can be run as a step in your worflows, for example the `Pull Request Merged` workflow. It requires a few inputs to be set which you can find the list of those defined inputs and their descriptions [here](./action.yml) in the `inputs` section. Below is an example of including this action inside of an existing workflow:
 
 ```yml
 name: Some Workflow
@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: ingeno/aws-workflows/.github/actions/node-setup@main
+        uses: ingeno/aws-workflows/.github/actions/node-setup@v1
 
       - name: Mend Scanner
         uses: ingeno/mend-scan-action@v1
@@ -37,7 +37,7 @@ jobs:
 
 ### Prerequisites
 
-Before you can run the action you must have at least a product created on the Mend Web App or through the SCA API. Once you have a product created, you will be able to copy the Product Token from the Product Settings page or the Integrate page and add it as a variable in your Github repo or pass it directly as an input (`prodcut-token`) as shown above.
+Before you can run the action you must have at least a product created on the Mend Web App or through the SCA API. Once you have a product created, you will be able to copy the Product Token from the Product Settings page or the Integrate page and add it as a variable in your Github repo or pass it directly as an input (`product-token`) as shown above.
 
 ### Additional Configuration
 
