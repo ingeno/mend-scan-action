@@ -4,7 +4,7 @@ To ensure compliance with licenses for open-source third-party libraries used in
 
 ## Using the GitHub Action
 
-The Mend Scan Action can be run as a step in your worflows, for example the `Pull Request Merged` workflow. It requires a few inputs to be set which you can find the list of those defined inputs and their descriptions [here](./action.yml) in the `inputs` section. Below is an example of including this action inside of an existing workflow:
+The Mend Scan Action can be run as a step in your workflows, for example the `Pull Request Merged` workflow. It requires a few inputs to be set which you can find the list of those defined inputs and their descriptions [here](./action.yml) in the `inputs` section. Below is an example of including this action inside of an existing workflow:
 
 ```yml
 name: Some Workflow
@@ -58,4 +58,4 @@ npm.projectNameFromDependencyFile=true
 
 For more details on the parameters available and their functions, please visit the Mend documentation for [Unified Agent Configuration Parameters](https://docs.mend.io/bundle/unified_agent/page/unified_agent_configuration_parameters.html).
 
-Note: In order to use the paramater `npm.projectNameFromDependencyFile=true` along with the `projectPerFolder=true`, you need to explicitly declare the version of each of the sub-projects in their corresponding `package.json` file.
+Note: In order to use the parameter `npm.projectNameFromDependencyFile=true` along with the `projectPerFolder=true`, you need to explicitly declare the version of each of the sub-projects in their corresponding `package.json` file.
